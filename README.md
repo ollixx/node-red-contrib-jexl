@@ -16,7 +16,7 @@ It also expects some data in the ```msg.context``` property. The expression is p
 }
 ```
 
-This would result to a string ```this is right``` in ```msg.payload```.
+This would result in this string: ```this is right``` in ```msg.payload```.
 
 ## Ideas to improve this node
 * set the input property name for payload / context
