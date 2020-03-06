@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    const NODE_CATEGORY = "parser";
+
+    RED.nodes.registerType('jexl', {
+        category: NODE_CATEGORY,
+        color: "#debd5c",
+        icon: "template.png",
+        defaults: {
+            name: { value: "" }
+        },
+        label: function () {
+            return this.name || "jexl";
+        },
+        inputs: 1,
+        outputs: 1,
+        paletteLabel: "jexl"
+
+	});
+</script>
+<script type="text/x-red" data-template-name="jexl">
+    <div class="form-row">
+        <label for="node-input-name" data-i18n="jexl.label.name"><i class="icon-tag"></i></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]jexl.label.name">
+    </div>
+  </script>
+  <script type="text/html" data-help-name="jexl">
+    <p>parses an espression using npm jexl.</p>
+    
+    <h3>Inputs</h3>
+        <dl class="message-properties">
+            <dt>payload
+                <span class="property-type">string</span>
+            </dt>
+            <dd> the jexl expression. </dd>
+            <dt>context <span class="property-type">any</span></dt>
+            <dd> the context data to run the expression against.</dd>
+        </dl>
+    
+     <h3>Outputs</h3>
+        <dl class="message-properties">
+            <dt>payload <span class="property-type">any</span></dt>
+            <dd>the resulting value as calculated by the jexl parser.</dd>
+        </dl>
+    
+    <h3>Details</h3>
+        <p><code>msg.payload</code> is parsed and evaluated by jexl against <code>msg.context</code>. 
+            The resulting value can be of any type (string, number, json, boolean, undefined, ...) and
+            is returned in <code>msg.payload</code>.
+        </p>
+    
+    <h3>References</h3>
+        <ul>
+            <li><a href="https://www.npmjs.com/package/jexl">jexl</a> the jexl npm module </li>
+        </ul>
+    </script>
