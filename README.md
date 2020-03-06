@@ -1,5 +1,5 @@
 # node-red-contrib-jexl
-[node-red](https://nodered.org/) [node](https://nodered.org/docs/tutorials/first-flow) to parse and evaluate an expression against a context using jexl
+[node-red](https://nodered.org/) [node](https://nodered.org/docs/tutorials/first-flow) to parse and evaluate an expression against a context using [jexl](https://www.npmjs.com/package/jexl)
 
 ## What does it do?
 The jexl node expects a msg.payload that contains a valid jexl expression, e.g.
