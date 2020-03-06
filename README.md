@@ -2,11 +2,11 @@
 [node-red](https://nodered.org/) [node](https://nodered.org/docs/tutorials/first-flow) to parse and evaluate an expression against a context using [jexl](https://www.npmjs.com/package/jexl)
 
 ## What does it do?
-The jexl node expects a msg.payload that contains a valid jexl expression, e.g.
+The jexl node expects a ```msg.payload``` that contains a valid jexl expression, e.g.
 
 ```(data.someprop + 2) > 42 ? "cannot be" : "this is right"```
 
-It also expects some data in the msg.context property. The expression is parsed and evaluated against this data, e.g.
+It also expects some data in the ```msg.context``` property. The expression is parsed and evaluated against this data, e.g.
 
 ``` json
 {
@@ -16,7 +16,7 @@ It also expects some data in the msg.context property. The expression is parsed 
 }
 ```
 
-This would result to a string ```this is right```
+This would result to a string ```this is right``` in ```msg.payload```.
 
 ## Ideas to improve this node
 * set the input property name for payload / context
