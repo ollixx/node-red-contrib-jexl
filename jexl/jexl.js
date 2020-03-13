@@ -10,7 +10,7 @@ module.exports = function (RED) {
 
         this.on("input", function (msg) {
 
-            var jexl = require('jexl/lib/jexl.js');
+            var jexl = require('../jexl/lib/jexl.js');
             try {
                 msg.payload = jexl.evalSync(msg.payload, msg.context);
                 if (msg.payload === undefined) {
