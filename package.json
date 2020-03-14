@@ -1,7 +1,7 @@
 {
     "name": "node-red-contrib-jexl",
     "description": "a node to use the JEXL expression language",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "author": "Oliver Charlet <oliver.charlet@clarities.de>",
     "repository": {

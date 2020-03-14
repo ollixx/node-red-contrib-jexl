@@ -1,18 +1,18 @@
 
 module.exports = function (RED) {
 
-    RED.nodes.registerType("jexl", pdfmake);
-    function pdfmake(config) {
+    RED.nodes.registerType("jexl", jexlNode);
+    function jexlNode(config) {
         var node = this;
 
         // Create our node and event handler
         RED.nodes.createNode(this, config);
+        node.jexl = require('jexl');
 
         this.on("input", function (msg) {
 
-            var jexl = require('../jexl/lib/jexl.js');
             try {
-                msg.payload = jexl.evalSync(msg.payload, msg.context);
+                msg.payload = node.jexl.evalSync(msg.payload, msg.context);
                 if (msg.payload === undefined) {
                     node.status({ fill: "yellow", shape: "ring", text: "-> undefined"});
                 } else {
